@@ -175,54 +175,57 @@ class FilterPage extends StatelessWidget {
                 //         child: Text("No data"),
                 //       ),
                 controller.isloading2 == true
-                    ? Container(
-                        height: MediaQuery.of(context).size.height * 0.7,
-                        child: SingleChildScrollView(
-                          child: Column(
-                              children: List.generate(
-                            controller.filterTodolist.length,
-                            (index) => Card(
-                              color: Colors.white,
-                              child: Padding(
-                                padding: const EdgeInsets.all(4.0),
-                                child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Text(
-                                      "ID : " +
-                                          controller.filterTodolist[index]["id"]
-                                              .toString(),
-                                      overflow: TextOverflow.fade,
-                                      maxLines: 2,
-                                    ),
-                                    SizedBox(
-                                      height: 2,
-                                    ),
-                                    Text("UserId : " +
-                                        controller.filterTodolist[index]
-                                                ["userId"]
-                                            .toString()),
-                                    Text(
-                                      "title : " +
+                    ? Expanded(
+                        child: Container(
+                          // height: MediaQuery.of(context).size.height * 0.7,
+                          child: SingleChildScrollView(
+                            child: Column(
+                                children: List.generate(
+                              controller.filterTodolist.length,
+                              (index) => Card(
+                                color: Colors.white,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(4.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.stretch,
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Text(
+                                        "ID : " +
+                                            controller.filterTodolist[index]
+                                                    ["id"]
+                                                .toString(),
+                                        overflow: TextOverflow.fade,
+                                        maxLines: 2,
+                                      ),
+                                      SizedBox(
+                                        height: 2,
+                                      ),
+                                      Text("UserId : " +
                                           controller.filterTodolist[index]
-                                              ["title"],
-                                      overflow: TextOverflow.fade,
-                                      maxLines: 2,
-                                    ),
-                                    SizedBox(
-                                      height: 2,
-                                    ),
-                                    Text("Is it Complete : " +
-                                        controller.filterTodolist[index]
-                                                ["completed"]
-                                            .toString())
-                                  ],
+                                                  ["userId"]
+                                              .toString()),
+                                      Text(
+                                        "title : " +
+                                            controller.filterTodolist[index]
+                                                ["title"],
+                                        overflow: TextOverflow.fade,
+                                        maxLines: 2,
+                                      ),
+                                      SizedBox(
+                                        height: 2,
+                                      ),
+                                      Text("Is it Complete : " +
+                                          controller.filterTodolist[index]
+                                                  ["completed"]
+                                              .toString())
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          )),
+                            )),
+                          ),
                         ),
                       )
                     : Container(

@@ -45,64 +45,66 @@ class AddToDo extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: GetBuilder<DioPostController>(
-            builder: ((controller) => Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Form(
-                        // key: formKey,
-                        child: Column(
-                      // shrinkWrap: true,
-                      children: [
-                        SizedBox(
-                          height: 5,
-                        ),
-                        CustomTextfield("Write your UserID... ",
-                            "Enter your UserID here!", userIdcntr),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        CustomTextfield(
-                            "Write your Id... ", "Enter your ID here!", idcntr),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        CustomTextfield("Write your task... ",
-                            "Enter your todo here!", todocntr),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        CustomTextfield(
-                            "Write your task completed false or true... ",
-                            "Enter your completed here!",
-                            completedcntr)
-                      ],
-                    )),
-                    custombutton("Add New Todo", () {
-                      controller.postHttp(todocntr.text, idcntr.text,
-                          userIdcntr.text, completedcntr.text);
-                      todocntr.clear();
-                      idcntr.clear();
-                      userIdcntr.clear();
-                      completedcntr.clear();
+            builder: ((controller) => SingleChildScrollView(
+                  child: Column(
+                    // mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Form(
+                          // key: formKey,
+                          child: Column(
+                        // shrinkWrap: true,
+                        children: [
+                          SizedBox(
+                            height: 5,
+                          ),
+                          CustomTextfield("Write your UserID... ",
+                              "Enter your UserID here!", userIdcntr),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          CustomTextfield("Write your Id... ",
+                              "Enter your ID here!", idcntr),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          CustomTextfield("Write your task... ",
+                              "Enter your todo here!", todocntr),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          CustomTextfield(
+                              "Write your task completed false or true... ",
+                              "Enter your completed here!",
+                              completedcntr)
+                        ],
+                      )),
+                      custombutton("Add New Todo", () {
+                        controller.postHttp(todocntr.text, idcntr.text,
+                            userIdcntr.text, completedcntr.text);
+                        todocntr.clear();
+                        idcntr.clear();
+                        userIdcntr.clear();
+                        completedcntr.clear();
 
-                      // controller.postHttp(todocntr.text, int.parse(idcntr.text),
-                      //     int.parse(userIdcntr.text), completedcntr.text);
-                    }, context),
-                    Container(
-                        height: h * .40,
-                        child: ListView.separated(
-                            separatorBuilder: (context, index) => SizedBox(
-                                  height: 3,
-                                ),
-                            // shrinkWrap: true,
-                            // scrollDirection: Axis.horizontal,
-                            itemCount: controller.postList.length,
-                            itemBuilder: (context, index) => buildTask(
-                                controller.postList[index]["userId"],
-                                controller.postList[index]["id"],
-                                controller.postList[index]["title"],
-                                controller.postList[index]["completed"]))),
-                  ],
+                        // controller.postHttp(todocntr.text, int.parse(idcntr.text),
+                        //     int.parse(userIdcntr.text), completedcntr.text);
+                      }, context),
+                      Container(
+                          height: h * .40,
+                          child: ListView.separated(
+                              separatorBuilder: (context, index) => SizedBox(
+                                    height: 3,
+                                  ),
+                              shrinkWrap: true,
+                              // scrollDirection: Axis.horizontal,
+                              itemCount: controller.postList.length,
+                              itemBuilder: (context, index) => buildTask(
+                                  controller.postList[index]["userId"],
+                                  controller.postList[index]["id"],
+                                  controller.postList[index]["title"],
+                                  controller.postList[index]["completed"]))),
+                    ],
+                  ),
                 )),
           ),
         ),

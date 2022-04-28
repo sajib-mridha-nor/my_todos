@@ -30,7 +30,7 @@ Widget custombutton(text, var onpress, context) {
           padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
           child: Text(
             text,
-            style: TextStyle(fontSize: 20, color: Colors.white),
+            style: TextStyle(fontSize: h * .030, color: Colors.white),
           ),
         ),
       ),
