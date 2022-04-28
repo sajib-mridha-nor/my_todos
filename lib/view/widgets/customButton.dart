@@ -27,7 +27,7 @@ Widget custombutton(text, var onpress, context) {
       child: TextButton(
         onPressed: onpress,
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+          padding: const EdgeInsets.symmetric(vertical: 2, horizontal: 10),
           child: Text(
             text,
             style: TextStyle(fontSize: h * .030, color: Colors.white),
