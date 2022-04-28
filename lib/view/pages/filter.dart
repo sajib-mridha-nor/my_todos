@@ -11,7 +11,6 @@ class FilterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(DioGetController());
- 
 
     return Scaffold(
       backgroundColor: Config().appColore,
@@ -82,13 +81,11 @@ class FilterPage extends StatelessWidget {
                           letterSpacing: 2.0)),
                 ),
 
-
                 // Dropdown section
                 //
                 //
                 //
                 //......
-
 
                 // controller.isloading2 == true
                 //     ? GetBuilder<DioFilterController>(
@@ -166,10 +163,7 @@ class FilterPage extends StatelessWidget {
                 //                             ["title"],
                 //                       )),
                 //               onChanged: (t) {
-                //                 // setState(() {
-                //                 // selectedtodoValue = t.toString();
-                //                 // print(selectedtodoValue);
-                //                 // });
+                //
 
                 //                 // print(t);
                 //               },
@@ -182,7 +176,7 @@ class FilterPage extends StatelessWidget {
                 //       ),
                 controller.isloading2 == true
                     ? Container(
-                        height: 550,
+                        height: MediaQuery.of(context).size.height * 0.7,
                         child: SingleChildScrollView(
                           child: Column(
                               children: List.generate(

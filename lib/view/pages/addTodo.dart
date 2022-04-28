@@ -7,7 +7,6 @@ import 'package:my_todos/config/config.dart';
 import 'package:my_todos/services/dio_post_controller.dart';
 import 'package:my_todos/view/widgets/buildTask.dart';
 
-
 import '../widgets/customButton.dart';
 
 import '../widgets/customTextfield.dart';
@@ -39,7 +38,6 @@ class AddToDo extends StatelessWidget {
             style: TextStyle(
                 wordSpacing: 2, letterSpacing: 5, fontStyle: FontStyle.italic),
           ),
-         
           centerTitle: true,
           backgroundColor: Config().appColore,
         ),
@@ -91,7 +89,7 @@ class AddToDo extends StatelessWidget {
                       //     int.parse(userIdcntr.text), completedcntr.text);
                     }, context),
                     Container(
-                        height: h * .45,
+                        height: h * .40,
                         child: ListView.separated(
                             separatorBuilder: (context, index) => SizedBox(
                                   height: 3,
